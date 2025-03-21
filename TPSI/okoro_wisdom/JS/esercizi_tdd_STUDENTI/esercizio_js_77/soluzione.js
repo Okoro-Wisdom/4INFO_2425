@@ -1,22 +1,9 @@
-export class Fibonacci {
+class Fibonacci {
   
-    static calcola(n) {
-        if (n === 0) return 0;
-        if (n === 1) return 1;
-
-        let a = 0, b = 1;
-        for (let i = 2; i <= n; i++) {
-            let temp = a + b;
-            a = b;
-            b = temp;
-        }
-        return b;
-    }
+     calcola(n) {
+       return n<= 1 ? n : this.calcola(n - 1) + this.calcola(n - 2)
 }
 
-
-const numeriDaTestare = [0, 1, 5, 8, 10];
-
-numeriDaTestare.forEach(n => {
-    console.log(`Fibonacci(${n}) = ${Fibonacci.calcola(n)}`);
-});
+}
+let f = new Fibonacci()
+console.log(f.calcola(4))
