@@ -1,6 +1,6 @@
 <main>
     <header>
-        <h1>Web App</h1>
+        <h1>The Honored One</h1>
     </header>
 
     <section>
@@ -8,8 +8,8 @@
             <ul>
                 <li><a href="/chi_sono">Chi sono</a></li>
                 <li><a href="/input">Input</a></li>
-                <li><a href="/counter">Coutner</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="/counter">Counter</a></li>
+                <li><a href="/about">About</a></li>
             </ul>
         </nav>
         
@@ -21,7 +21,7 @@
     </section>
 
     <footer>
-        <h4>Copyright &copy: </h4>
+        <h4>Creazione 11/03/2024 </h4>
     </footer>
 
 </main>

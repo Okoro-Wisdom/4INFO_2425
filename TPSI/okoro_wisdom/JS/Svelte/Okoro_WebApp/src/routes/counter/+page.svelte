@@ -1,31 +1,35 @@
+
 <script>
-    import Counter from "$lib/components/counter.svelte";
-    import DoubleCounter from "$lib/components/dueblecounter.svelte";
+   import Counter from "$lib/components/counter.svelte";
+   import DoubleCounter from "$lib/components/dueblecounter.svelte";
+   
+   function gestisci_evento(evento){
+      alert(`${evento.detail.tipo} -- ${evento.detail.valore}`)
+   }
+
     let contatore = 0
+    let contatore2 = 0
     let numeri = [1,7,3,5,9,0]
     let sottolinea = true;
+    let doppio;
     $: doppio = contatore *2
+
 </script>
 
 <h1>Pagina Counter !!</h1>
-<h2>Il valore doppio vale {doppio}</h2>
-<Counter/>
+<h2 class:sottolinea>Il valore del contatore vale {contatore}</h2>
+<h3 class:sottolinea>Il Valore del contatore doppio vale : {doppio} </h3>
+<Counter bind:counter={contatore} on:contatore={gestisci_evento}/>
+<DoubleCounter bind:counter={contatore2}/>
 
-<DoubleCounter bind:counter={contatore}/>
-
-{#if contatore <5}
-   <h3 class:sottolinea>Il Valore del contatore vale : {contatore} </h3>
-{:else}
-   <h3 class="verde">Il Valore del contatore vale : {contatore} </h3>
-{/if}
 <ul>
   {#each numeri as numero ,indice}
   <li>numeri[{indice}]:{numero}</li>
   {/each}
 </ul>
 <style>
-    .verde{color: green;}
     .sottolinea {
       text-decoration: underline;
-      color: red;}
+      color: rgb(6, 97, 182);
+      }
 </style>

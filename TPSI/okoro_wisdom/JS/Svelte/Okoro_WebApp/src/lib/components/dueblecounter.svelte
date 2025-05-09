@@ -4,14 +4,22 @@
 </svelte:head>
 
 <script>
+    import {createEventDispatcher} from "svelte";
+    import {store_double_counter} from '../js/store.js';
+
+
+    const dispatch = createEventDispatcher();
+
     export let counter = 0;
   
     function incrementa() {
       counter += 2 ;
+      $store_double_counter = counter
     }
 
     function decrementa() {
-      counter -= 3;
+      $store_double_counter = counter
+      counter -= 2;
     }
   </script>
 <h2>Counter 2</h2>
@@ -22,7 +30,7 @@
         </button>
     </div>
     <div class="number">
-        {counter}
+        {$store_double_counter}
     </div>
     <div class="pulsante">
         <button on:click={incrementa}>
