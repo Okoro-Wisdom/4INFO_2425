@@ -105,7 +105,7 @@ int main(int argc, char **argv)
     /* invio sul socket la stringa */
      byte_sent = socket_send(socket_fd, argv[3]); 
 
-    printf("Inviato %d bytes con successo\n", byte_sent);
+    printf("Inviato %d bytes con successo %s\n", byte_sent,buf);
     
     msg_size = socket_receive(socket_fd, buf);
     printf("Ricevuto %d bytes con successo\n", msg_size);
